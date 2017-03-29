@@ -7,6 +7,7 @@
              '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (package-initialize)
 
+
 ;;; load-pathを追加する関数を定義
 (defun add-to-load-path (&rest paths)
   (let (path)
@@ -23,7 +24,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (markdown-mode python))))
+ '(package-selected-packages
+   (quote
+    (flymake-python-pyflakes auto-complete markdown-mode python))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -31,4 +34,19 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; auto-complete
+(ac-config-default)
+
+;; python-mode & flymake
+(add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
+
+; show message on mini-buffer
+(defun flymake-show-help ()
+  (when (get-char-property (point) 'flymake-overlay)
+    (let ((help (get-char-property (point) 'help-echo)))
+      (if help (message "%s" help)))))
+(add-hook 'post-command-hook 'flymake-show-help)
+
+;; Set as a minor mode for python
+(add-hook 'python-mode-hook '(lambda () (flymake-mode)))
 
