@@ -155,9 +155,12 @@ fpath=(/path/to/homebrew/share/zsh-completions $fpath)
 autoload -U compinit
 compinit -u
 
-# play framwork 1.2
 export PATH=/usr/local/bin:$PATH
+# play framwork 1.2
 export PATH="/Users/kan/prog/play-1.2.5.6/:$PATH"
+# play framework 2.4x(activator)
+#export PATH="/Users/kan/prog/activator/bin:$PATH"
+
 # pyenv
 PYENV_ROOT=~/.pyenv
 export PATH=$PATH:$PYENV_ROOT/bin

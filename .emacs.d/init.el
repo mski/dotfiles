@@ -26,7 +26,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flymake-python-pyflakes auto-complete markdown-mode python))))
+    (helm anything yaml-mode flymake-python-pyflakes auto-complete markdown-mode python))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -50,3 +50,12 @@
 ;; Set as a minor mode for python
 (add-hook 'python-mode-hook '(lambda () (flymake-mode)))
 
+;; helm mode
+(require 'helm-config)
+(helm-mode 1)
+
+;; anything
+(require 'anything-startup nil t)
+(require 'anything-config)
+(global-set-key (kbd "C-x C-f") 'anything-for-files )
+	
