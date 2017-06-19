@@ -167,6 +167,8 @@ export PATH=$PATH:$PYENV_ROOT/bin
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+export PYTHONPATH=$PYTHONPATH:/usr/local/opt/opencv3/lib/python2.7/site-packages/
+
 # github
 ssh-add ~/.ssh/github_id_rsa > /dev/null 2>&1
 

@@ -57,5 +57,8 @@
 ;; anything
 (require 'anything-startup nil t)
 (require 'anything-config)
-(global-set-key (kbd "C-x C-f") 'anything-for-files )
+(global-set-key (kbd "C-q") 'anything-filelist+)
 	
+
+(custom-set-variables
+ '(markdown-command "/usr/local/bin/markdown"))
