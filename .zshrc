@@ -174,3 +174,15 @@ ssh-add ~/.ssh/github_id_rsa > /dev/null 2>&1
 
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
+# latex
+
+export PATH="/usr/local/texlive/2017/bin/x86_64-darwin:$PATH"
+
+# lpsolv
+
+export CPLUS_INCLUDE_PATH=/usr/local/Cellar/lp_solve/5.5.2.0
+
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+export PATH=$PATH:/Users/kan/.nodebrew/current/bin
